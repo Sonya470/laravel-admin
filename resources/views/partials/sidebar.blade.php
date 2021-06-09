@@ -28,7 +28,7 @@
                     @foreach(Admin::menuLinks() as $link)
                     <li>
                         <a href="{{ admin_url($link['uri']) }}">
-                        </i>{{ admin_trans($link['title']) }}</a>
+                        </i>{{'fdsafdsf' }}</a>
                         @switch($link['uri'])
                             @case('/auth-problems')
                                 <div>
