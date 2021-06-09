@@ -10,8 +10,24 @@
                 @if (Lang::has($titleTranslation = 'admin.menu_titles.' . trim(str_replace(' ', '_', strtolower($item['title'])))))
                     <span>{{ __($titleTranslation) }}</span>
                 @else
-                    <span>{{ 'fsdafdsfsdf' }}</span>
+                    <span>{{ admin_trans($item['title']) }}</span>
                 @endif
+                     @switch($item['uri'])
+                         @case('/auth-problems')
+                            <span style="padding: 5px; background: whitesmoke; color: black">5</span>
+                         @break
+
+                         @case('/new-chats')
+                            <span style="padding: 5px; background: whitesmoke; color: black">22</span>
+                         @break
+
+                         @case('/chats')
+                            <span style="padding: 5px; background: whitesmoke; color: black">222</span>
+                         @break
+
+                         @default
+                         Default case...
+                     @endswitch
             </a>
         </li>
     @else
