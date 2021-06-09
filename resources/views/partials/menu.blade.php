@@ -14,15 +14,30 @@
                 @endif
                      @switch($item['uri'])
                          @case('/auth-problems')
-                            <span style="padding: 5px; border-radius: 5px; margin-left: 10px; background: whitesmoke; color: black">5</span>
+                             <auth-problems count="0">
+                             </auth-problems>
                          @break
 
                          @case('/new-chats')
-                            <span style="padding: 5px; border-radius: 5px; margin-left: 10px; background: whitesmoke; color: black">22</span>
+                         <span style="
+                            padding: 5px;
+                            border-radius: 5px;
+                            margin-left: 10px;
+                            background: whitesmoke;
+                            color: black">
+                                5
+                            </span>
                          @break
 
                          @case('/chats')
-                            <span style="padding: 5px; border-radius: 5px; margin-left: 10px; background: whitesmoke; color: black">222</span>
+                         <span style="
+                            padding: 5px;
+                            border-radius: 5px;
+                            margin-left: 10px;
+                            background: whitesmoke;
+                            color: black">
+                                5
+                            </span>
                          @break
 
                          @default
@@ -48,3 +63,9 @@
         </li>
     @endif
 @endif
+
+<script>
+    Echo.channel('home').listen(".newProblem", (e) => {
+        document.getElementById('authProblem').textContent = e.msg;
+    });
+</script>
