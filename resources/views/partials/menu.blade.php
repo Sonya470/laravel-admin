@@ -14,14 +14,14 @@
                             @endif
                             @switch($item['uri'])
                                 @case('/auth-problems')
-                                <div id="app">
+                                <div id="problems">
                                     <auth-problems>
                                     </auth-problems>
                                 </div>
                                 @break
 
                                 @case('/new-chats')
-                                <div id="app">
+                                <div id="chatForms">
                                     <chat-forms>
                                     </chat-forms>
                                 </div>
