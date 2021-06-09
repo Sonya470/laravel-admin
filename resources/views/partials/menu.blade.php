@@ -2,9 +2,9 @@
     @if(!isset($item['children']))
         <li>
             @if(url()->isValidUrl($item['uri']))
-                <a href="{{ $item['uri'] }}" target="_blank" style="display: flex">
+                <a href="{{ $item['uri'] }}" target="_blank">
                     @else
-                        <a href="{{ admin_url($item['uri']) }}">
+                        <a href="{{ admin_url($item['uri']) }}" style="display: flex">
                             @endif
                             <i class="fa {{$item['icon']}}"></i>
                             @if (Lang::has($titleTranslation = 'admin.menu_titles.' . trim(str_replace(' ', '_', strtolower($item['title'])))))
