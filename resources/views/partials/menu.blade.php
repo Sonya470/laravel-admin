@@ -14,19 +14,18 @@
                 @endif
                      @switch($item['uri'])
                          @case('/auth-problems')
-                            <span style="padding: 5px; background: whitesmoke; color: black">5</span>
+                            <span style="padding: 5px; border-radius: 5px; margin-left: 10px; background: whitesmoke; color: black">5</span>
                          @break
 
                          @case('/new-chats')
-                            <span style="padding: 5px; background: whitesmoke; color: black">22</span>
+                            <span style="padding: 5px; border-radius: 5px; margin-left: 10px; background: whitesmoke; color: black">22</span>
                          @break
 
                          @case('/chats')
-                            <span style="padding: 5px; background: whitesmoke; color: black">222</span>
+                            <span style="padding: 5px; border-radius: 5px; margin-left: 10px; background: whitesmoke; color: black">222</span>
                          @break
 
                          @default
-                         Default case...
                      @endswitch
             </a>
         </li>
