@@ -27,16 +27,7 @@
                 <ul class="dropdown-menu" role="menu" style="min-width: 210px;max-height: 300px;overflow: auto;">
                     @foreach(Admin::menuLinks() as $link)
                     <li>
-                        <a href="{{ admin_url($link['uri']) }}">
-                        </i>{{'fdsafdsf' }}</a>
-                        @switch($link['uri'])
-                            @case('/auth-problems')
-                                <div>
-                                    0
-                                </div>
-                            @break
-                            @default
-                        @endswitch
+                        {{Admin::menuLinks()}}
 
                     </li>
 
