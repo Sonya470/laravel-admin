@@ -28,14 +28,10 @@
                                 @break
 
                                 @case('/chats')
-                                <span style="
-                            padding: 5px;
-                            border-radius: 5px;
-                            margin-left: 10px;
-                            background: whitesmoke;
-                            color: black">
-                                5
-                            </span>
+                                <div id="chatsCount">
+                                    <chats-count>
+                                    </chats-count>
+                                </div>
                                 @break
 
                                 @default
