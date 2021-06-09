@@ -2,7 +2,7 @@
     @if(!isset($item['children']))
         <li>
             @if(url()->isValidUrl($item['uri']))
-                <a href="{{ $item['uri'] }}" target="_blank">
+                <a href="{{ $item['uri'] }}" target="_blank" style="display: flex">
                     @else
                         <a href="{{ admin_url($item['uri']) }}">
                             @endif
