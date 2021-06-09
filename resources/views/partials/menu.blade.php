@@ -15,19 +15,16 @@
                             @switch($item['uri'])
                                 @case('/auth-problems')
                                 <div id="problems">
-                                    <auth-problems count="0">
+                                    <auth-problems>
                                     </auth-problems>
                                 </div>
                                 @break
 
                                 @case('/new-chats')
-                                <span style="
-                            padding: 5px;
-                            border-radius: 5px;
-                            margin-left: 10px;
-                            background: whitesmoke;
-                            color: black">
-                                5
+                                <div id="problems">
+                                    <chat-forms>
+                                    </chat-forms>
+                                </div>
                             </span>
                                 @break
 
