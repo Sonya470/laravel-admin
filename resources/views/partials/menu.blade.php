@@ -25,7 +25,6 @@
                                     <chat-forms>
                                     </chat-forms>
                                 </div>
-                            </span>
                                 @break
 
                                 @case('/chats')
