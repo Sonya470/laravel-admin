@@ -10,7 +10,7 @@
                 @if (Lang::has($titleTranslation = 'admin.menu_titles.' . trim(str_replace(' ', '_', strtolower($item['title'])))))
                     <span>{{ __($titleTranslation) }}</span>
                 @else
-                    <span>{{ admin_trans($item['title']) }}</span>
+                    <span>{{ 'fsdafdsfsdf' }}</span>
                 @endif
             </a>
         </li>
