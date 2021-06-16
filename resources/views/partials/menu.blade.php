@@ -34,6 +34,13 @@
                                 </div>
                                 @break
 
+                                @case('/requests')
+                                <div id="requestsCount">
+                                    <requests-count>
+                                    </requests-count>
+                                </div>
+                                @break
+
                                 @default
                             @endswitch
                         </a>
