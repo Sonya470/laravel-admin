@@ -44,12 +44,12 @@
                 @if($grid->rows()->isEmpty() && $grid->showDefineEmptyPage())
                     @include('admin::grid.empty-grid')
                 @endif
-                {{
-    dd($title)
-}}
                 @foreach($grid->rows() as $row)
                 @if(str_contains($title,'NewsItem'))
                 <tr onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getRowAttributes() !!}>
+                    {{
+dd($row)
+}}
                     @foreach($grid->visibleColumnNames() as $name)
                     <td {!! $row->getColumnAttributes($name) !!}>
                         {!! $row->column($name) !!}
