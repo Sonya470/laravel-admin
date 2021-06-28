@@ -46,7 +46,8 @@
                 @endif
 
                 @foreach($grid->rows() as $row)
-                <tr {!! $row->getRowAttributes() !!}>
+
+                <tr onclick="window.location.replace(location.href+'/'+1+'/edit')" {!! $row->getRowAttributes() !!}>
                     @foreach($grid->visibleColumnNames() as $name)
                     <td {!! $row->getColumnAttributes($name) !!}>
                         {!! $row->column($name) !!}
@@ -69,3 +70,4 @@
     </div>
     <!-- /.box-body -->
 </div>
+
