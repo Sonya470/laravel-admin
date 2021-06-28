@@ -46,7 +46,7 @@
                 @endif
                 @foreach($grid->rows() as $row)
                     {{
-get_class(dd($grid->model()->path()->getOriginalModel()))
+dd(get_class($grid->model()->path()->getOriginalModel()))
 }}
                 @if(1)
                 <tr onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getRowAttributes() !!}>
