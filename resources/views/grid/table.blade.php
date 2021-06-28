@@ -46,7 +46,7 @@
                 @endif
 
                 @foreach($grid->rows() as $row)
-                @if($title.contains('NewsItem'))
+                @if(str_contains($title,'NewsItem'))
                 <tr onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getRowAttributes() !!}>
                     @foreach($grid->visibleColumnNames() as $name)
                     <td {!! $row->getColumnAttributes($name) !!}>
