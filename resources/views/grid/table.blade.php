@@ -47,7 +47,7 @@
 
                 @foreach($grid->rows() as $row)
 
-                <tr onclick="window.location.replace(location.href+'/'+1+'/edit')" {!! $row->getRowAttributes() !!}>
+                <tr onclick="window.location.replace(location.href+{{$row->column('id')}}+'/edit')" {!! $row->getRowAttributes() !!}>
                     @foreach($grid->visibleColumnNames() as $name)
                     <td {!! $row->getColumnAttributes($name) !!}>
                         {!! $row->column($name) !!}
