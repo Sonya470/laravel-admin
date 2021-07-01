@@ -92,7 +92,7 @@ class RoleController extends AdminController
 
         $form->text('slug', trans('admin.slug'))->rules('required');
         $form->text('name', trans('admin.name'))->rules('required');
-        $form->select('permissions', trans('admin.permissions'))->options($permissionModel::all()->pluck('name', 'id'));
+        $form->multipleSelect('permissions', trans('admin.permissions'))->options($permissionModel::all()->pluck('name', 'id'));
 
         return $form;
     }
