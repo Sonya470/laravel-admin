@@ -1,38 +1,38 @@
 <div class="box grid-box">
     @if(isset($title))
-    <div class="box-header with-border">
-        <h3 class="box-title"> {{ $title }}</h3>
-    </div>
+        <div class="box-header with-border">
+            <h3 class="box-title"> {{ $title }}</h3>
+        </div>
     @endif
 
     @if ( $grid->showTools() || $grid->showExportBtn() || $grid->showCreateBtn() )
-    <div class="box-header with-border">
-        <div class="pull-right">
-            {!! $grid->renderColumnSelector() !!}
-            {!! $grid->renderExportButton() !!}
-            {!! $grid->renderCreateButton() !!}
+        <div class="box-header with-border">
+            <div class="pull-right">
+                {!! $grid->renderColumnSelector() !!}
+                {!! $grid->renderExportButton() !!}
+                {!! $grid->renderCreateButton() !!}
+            </div>
+            @if ( $grid->showTools() )
+                <div class="pull-left">
+                    {!! $grid->renderHeaderTools() !!}
+                </div>
+            @endif
         </div>
-        @if ( $grid->showTools() )
-        <div class="pull-left">
-            {!! $grid->renderHeaderTools() !!}
-        </div>
-        @endif
-    </div>
     @endif
 
     {!! $grid->renderFilter() !!}
 
     {!! $grid->renderHeader() !!}
 
-    <!-- /.box-header -->
+<!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
         <table class="table table-hover grid-table" id="{{ $grid->tableID }}">
             <thead>
-                <tr>
-                    @foreach($grid->visibleColumns() as $column)
+            <tr>
+                @foreach($grid->visibleColumns() as $column)
                     <th {!! $column->formatHtmlAttributes() !!}>{!! $column->getLabel() !!}{!! $column->renderHeader() !!}</th>
-                    @endforeach
-                </tr>
+                @endforeach
+            </tr>
             </thead>
 
             @if ($grid->hasQuickCreate())
@@ -41,20 +41,26 @@
 
             <tbody>
 
-                @if($grid->rows()->isEmpty() && $grid->showDefineEmptyPage())
-                    @include('admin::grid.empty-grid')
-                @endif
-                @foreach($grid->rows() as $row)
+            @if($grid->rows()->isEmpty() && $grid->showDefineEmptyPage())
+                @include('admin::grid.empty-grid')
+            @endif
+            @foreach($grid->rows() as $row)
                 @if(get_class($grid->model()->path()->getOriginalModel()) === "App\Models\NewsItem")
-                <tr {!! $row->getRowAttributes() !!}>
+                    <tr {!! $row->getRowAttributes() !!}>
 
-                    @foreach($grid->visibleColumnNames() as $name)
-                       {{dump($name)}}
-                    <td onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
-                        {!! $row->column($name) !!}
-                    </td>
-                    @endforeach
-                </tr>
+                        @foreach($grid->visibleColumnNames() as $name)
+                            @if($name !== '__actions__')
+                                <td onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
+                                    {!! $row->column($name) !!}
+                                </td>
+                            @else
+                                <td {!! $row->getColumnAttributes($name) !!}>
+                                    {!! $row->column($name) !!}
+                                </td>
+                            @endif
+
+                        @endforeach
+                    </tr>
                 @else
                     <tr {!! $row->getRowAttributes() !!}>
                         @foreach($grid->visibleColumnNames() as $name)
@@ -64,7 +70,7 @@
                         @endforeach
                     </tr>
                 @endif
-                @endforeach
+            @endforeach
             </tbody>
 
             {!! $grid->renderTotalRow() !!}
