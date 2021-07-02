@@ -46,10 +46,11 @@
                 @endif
                 @foreach($grid->rows() as $row)
                 @if(get_class($grid->model()->path()->getOriginalModel()) === "App\Models\NewsItem")
-                <tr onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getRowAttributes() !!}>
+                <tr {!! $row->getRowAttributes() !!}>
 
                     @foreach($grid->visibleColumnNames() as $name)
-                    <td {!! $row->getColumnAttributes($name) !!}>
+                       {{dump($name)}}
+                    <td onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
                         {!! $row->column($name) !!}
                     </td>
                     @endforeach
