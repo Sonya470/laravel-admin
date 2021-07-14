@@ -50,7 +50,7 @@
 
                         @foreach($grid->visibleColumnNames() as $name)
                             @if($name !== '__actions__')
-                                <td onclick="document.location.href = window.location.hostname+'/admin/news-items/'+{{$row->column('id')}}+'/edit'" {!! $row->getColumnAttributes($name) !!}>
+                                <td onclick="window.location.assign(window.location.hostname+'/admin/news-items/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
                                     {!! $row->column($name) !!}
                                 </td>
                             @else
@@ -65,7 +65,7 @@
                     <tr {!! $row->getRowAttributes() !!}>
                         @foreach($grid->visibleColumnNames() as $name)
                             @if($name !== '__actions__')
-                                <td onclick="document.location.href = window.location.hostname+'/admin/quizzes/'+{{$row->column('id')}}+'/edit'" {!! $row->getColumnAttributes($name) !!}>
+                                <td onclick="window.location.assign(window.location.hostname+'/admin/quizzes/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
                                     {!! $row->column($name) !!}
                                 </td>
                             @else
