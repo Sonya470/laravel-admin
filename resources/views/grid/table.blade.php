@@ -50,7 +50,7 @@
 
                         @foreach($grid->visibleColumnNames() as $name)
                             @if($name !== '__actions__')
-                                <td onclick="window.location.replace(location.href+'/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
+                                <td onclick="window.location.replace('admin/news-items/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
                                     {!! $row->column($name) !!}
                                 </td>
                             @else
@@ -59,6 +59,20 @@
                                 </td>
                             @endif
 
+                        @endforeach
+                    </tr>
+                @elseif(get_class($grid->model()->path()->getOriginalModel()) === "App\Models\Quiz")
+                    <tr {!! $row->getRowAttributes() !!}>
+                        @foreach($grid->visibleColumnNames() as $name)
+                            @if($name !== '__actions__')
+                                <td onclick="window.location.replace('admin/quizzes/'+{{$row->column('id')}}+'/edit')" {!! $row->getColumnAttributes($name) !!}>
+                                    {!! $row->column($name) !!}
+                                </td>
+                            @else
+                                <td {!! $row->getColumnAttributes($name) !!}>
+                                    {!! $row->column($name) !!}
+                                </td>
+                            @endif
                         @endforeach
                     </tr>
                 @else
