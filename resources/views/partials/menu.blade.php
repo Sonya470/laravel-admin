@@ -20,13 +20,6 @@
                                 </div>
                                 @break
 
-                                @case('/new-chats')
-                                <div id="chatForms">
-                                    <chat-forms>
-                                    </chat-forms>
-                                </div>
-                                @break
-
                                 @case('/chats')
                                 <div id="chatsCount">
                                     <chats-count>
@@ -34,10 +27,31 @@
                                 </div>
                                 @break
 
-                                @case('/requests')
-                                <div id="requestsCount">
-                                    <requests-count>
-                                    </requests-count>
+                                @case('/profile-requests')
+                                <div id="profileRequestsCount">
+                                    <profile-requests-count>
+                                    </profile-requests-count>
+                                </div>
+                                @break
+
+                                @case('/vacation-requests')
+                                <div id="vacationRequestsCount">
+                                    <vacation-requests-count>
+                                    </vacation-requests-count>
+                                </div>
+                                @break
+
+                                @case('/material-requests')
+                                <div id="materialSupportRequestsCount">
+                                    <material-support-requests-count>
+                                    </material-support-requests-count>
+                                </div>
+                                @break
+
+                                @case('/document-requests')
+                                <div id="documentRequestsCount">
+                                    <document-requests-count>
+                                    </document-requests-count>
                                 </div>
                                 @break
 
