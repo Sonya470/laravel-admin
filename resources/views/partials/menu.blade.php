@@ -54,6 +54,12 @@
                                     </document-requests-count>
                                 </div>
                                 @break
+                                @case('/vacation-approve')
+                                <div id="vacationApproveCount">
+                                    <vacation-approve-count>
+                                    </vacation-approve-count>
+                                </div>
+                                @break
 
                                 @default
                             @endswitch
