@@ -60,7 +60,12 @@
                                     </vacation-approve-count>
                                 </div>
                                 @break
-
+                                @case('/absence-approve')
+                                <div id="absenceApproveCount">
+                                    <absence-approve-count>
+                                    </absence-approve-count>
+                                </div>
+                                @break
                                 @default
                             @endswitch
                         </a>
