@@ -66,6 +66,12 @@
                                     </absence-approve-count>
                                 </div>
                                 @break
+                                @case('/exports')
+                                <div id="exportsCount">
+                                    <exports-count>
+                                    </exports-count>
+                                </div>
+                                @break
                                 @default
                             @endswitch
                         </a>
